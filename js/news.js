@@ -38,23 +38,22 @@ const displayNews = newse => {
             <div class="col-md-8">
                 <div class="card-body">
                     <h5 class="card-title">${news.title}</h5>
-                    <p class="card-text"><small class="text-muted">${news.details}</small></p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
+                    <p class="card-text"><small class="text-muted">${news.details.length > 400 ? news.details.slice(0,400) + '...' : news.details}</small></p>
                 </div>
 
                 <div class="container text-center">
                 <div class="row row-cols-4">
                   <div class="col d-flex">
                     <div>
-                      <img src="https://placeimg.com/80/80/people" style=" border-radius: 50%; width: 50px; height: 50px;" class="" alt="">
+                      <img src="${news.image_url}" style=" border-radius: 50%; width: 50px; height: 50px;" class="" alt="">
                     </div>
                     <div class="text-start ps-3 lh-sm">
-                      <p class="mb-2">name</p>
+                      <p class="mb-2">${news.author.name}</p>
                       <p><small>Sep 03, 2022</small> </p>
                     </div>
                   </div>
                   <div class="col mt-3">
-                    <i class="fa-regular fa-eye"></i>
+                    <i class="fa-regular fa-eye"> ${news.total_view}</i>
                   </div>
                   <div class="col mt-3">
                     <i class="fa-solid fa-star-half-stroke"></i>
@@ -64,7 +63,7 @@ const displayNews = newse => {
                     <i class="fa-regular fa-star"></i>
                   </div>
                   <div class="col mt-3">
-                    <i class="fa-solid fa-arrow-right text-primary"></i>
+                    <a href=""><i class="fa-solid fa-arrow-right text-primary"></i></a>
                   </div>
                 </div>
               </div>
