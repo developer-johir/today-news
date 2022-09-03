@@ -37,10 +37,38 @@ const displayNews = newse => {
                 </div>
             <div class="col-md-8">
                 <div class="card-body">
-                    <h5 class="card-title">Card title</h5>
-                    <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                    <h5 class="card-title">${news.title}</h5>
+                    <p class="card-text"><small class="text-muted">${news.details}</small></p>
                     <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
                 </div>
+
+                <div class="container text-center">
+                <div class="row row-cols-4">
+                  <div class="col d-flex">
+                    <div>
+                      <img src="https://placeimg.com/80/80/people" style=" border-radius: 50%; width: 50px; height: 50px;" class="" alt="">
+                    </div>
+                    <div class="text-start ps-3 lh-sm">
+                      <p class="mb-2">name</p>
+                      <p><small>Sep 03, 2022</small> </p>
+                    </div>
+                  </div>
+                  <div class="col mt-3">
+                    <i class="fa-regular fa-eye"></i>
+                  </div>
+                  <div class="col mt-3">
+                    <i class="fa-solid fa-star-half-stroke"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                    <i class="fa-regular fa-star"></i>
+                  </div>
+                  <div class="col mt-3">
+                    <i class="fa-solid fa-arrow-right text-primary"></i>
+                  </div>
+                </div>
+              </div>
+
             </div>
         </div>
         `
