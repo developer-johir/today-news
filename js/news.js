@@ -6,14 +6,6 @@ const loadCategory = () => {
 
 const displayCategory = categorys => {
     const categoryContainer = document.getElementById('category-container');
-    if(categorys.length !== 0){
-        const sumItems = document.getElementById('sum-items');
-        sumItems.innerText = categorys;
-    }
-    else{
-        const sumItems = document.getElementById('sum-items');
-        sumItems.innerText = categorys;
-    }
     categorys.forEach(category => {
         const categoryli = document.createElement('li');
     categoryli.innerHTML = `
@@ -34,7 +26,9 @@ const loadNewsDetail = (category_id) => {
 }
 
 const displayNews = newse => {
-    //console.log(newse);
+    //console.log(newse.length);
+    document.getElementById('sum-items').innerHTML = newse.length;
+
     const newsContainer = document.getElementById('news-container');
     toggleSpinner(true);
     newsContainer.textContent = '';
@@ -46,6 +40,7 @@ const displayNews = newse => {
         const noFound = document.getElementById('no-found');
         noFound.classList.add('d-none');
     }
+
     newse.forEach(news => {
         const newsDiv = document.createElement('div');
         newsDiv.classList.add('card');
@@ -104,6 +99,20 @@ const toggleSpinner = isLoading => {
         loderSection.classList.add('d-none')
     }
 }
+
+const items = [
+    {name: 'Breaking News', value: 8},
+    {name: 'Regular News', value: 5},
+    {name: 'International News', value: 5},
+    {name: 'Sports', value: 3},
+    {name: 'Entertainment', value: 3},
+    {name: 'Culture', value: 0},
+    {name: 'Arts', value: 2},
+    {name: 'All News', value: 26},
+];
+
+items.sort((a, b) => b.value-a.value);
+console.log(items);
 
 // const loadModalDetail = async news_id =>{
 //     const url = `https://openapi.programming-hero.com/api/news/${news_id}`;
