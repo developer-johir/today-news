@@ -6,6 +6,14 @@ const loadCategory = () => {
 
 const displayCategory = categorys => {
     const categoryContainer = document.getElementById('category-container');
+    if(categorys.length !== 0){
+        const sumItems = document.getElementById('sum-items');
+        sumItems.innerText = categorys;
+    }
+    else{
+        const sumItems = document.getElementById('sum-items');
+        sumItems.innerText = categorys;
+    }
     categorys.forEach(category => {
         const categoryli = document.createElement('li');
     categoryli.innerHTML = `
@@ -15,6 +23,7 @@ const displayCategory = categorys => {
     `
     categoryContainer.appendChild(categoryli);
     })
+    toggleSpinner(false);
 } 
 
 const loadNewsDetail = (category_id) => {
@@ -27,6 +36,7 @@ const loadNewsDetail = (category_id) => {
 const displayNews = newse => {
     //console.log(newse);
     const newsContainer = document.getElementById('news-container');
+    toggleSpinner(true);
     newsContainer.textContent = '';
     if(newse.length === 0){
         const noFound = document.getElementById('no-found');
@@ -35,14 +45,6 @@ const displayNews = newse => {
     else{
         const noFound = document.getElementById('no-found');
         noFound.classList.add('d-none');
-    }
-    if(newse.length !== 0){
-        const sumItems = document.getElementById('sum-items');
-        sumItems.innerText = newse;
-    }
-    else{
-        const sumItems = document.getElementById('sum-items');
-        sumItems.innerText = newse.length;
     }
     newse.forEach(news => {
         const newsDiv = document.createElement('div');
@@ -90,6 +92,17 @@ const displayNews = newse => {
         `
         newsContainer.appendChild(newsDiv);
     })
+}
+
+
+const toggleSpinner = isLoading => {
+    const loderSection = document.getElementById('loader');
+    if(isLoading){
+        loderSection.classList.remove('d-none')
+    }
+    else{
+        loderSection.classList.add('d-none')
+    }
 }
 
 // const loadModalDetail = async news_id =>{
