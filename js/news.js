@@ -57,7 +57,7 @@ const displayNews = newse => {
 
                 <div class="container text-center">
                 <div class="row row-cols-4">
-                  <div class="col d-flex">
+                  <div class="col-6 col-md-3 d-flex">
                     <div>
                       <img src="${news.image_url}" style=" border-radius: 50%; width: 50px; height: 50px;" class="" alt="">
                     </div>
@@ -66,17 +66,17 @@ const displayNews = newse => {
                       <p><small>Sep 03, 2022</small> </p>
                     </div>
                   </div>
-                  <div class="col mt-3">
+                  <div class="col-6 col-md-3 mt-3">
                     <i class="fa-regular fa-eye"> ${news.total_view}</i>
                   </div>
-                  <div class="col mt-3">
+                  <div class="col-6 col-md-3 mt-3">
                     <i class="fa-solid fa-star-half-stroke"></i>
                     <i class="fa-regular fa-star"></i>
                     <i class="fa-regular fa-star"></i>
                     <i class="fa-regular fa-star"></i>
                     <i class="fa-regular fa-star"></i>
                   </div>
-                  <div class="col mt-3">
+                  <div class="col-6 col-md-3 mt-3">
                     <button class="border-0 bg-white" href=""><i class="fa-solid fa-arrow-right text-primary"></i></button>
                   </div>
                 </div>
